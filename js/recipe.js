@@ -1,0 +1,185 @@
+const recipeGrid = document.getElementById("recipeGrid");
+const searchInput = document.getElementById("searchInput");
+const recipeContainer = document.getElementById("recipeContainer");
+
+let allRecipes = [];
+
+
+// Fetch recipes.json
+async function fetchRecipes() {
+  try {
+    const res = await fetch("data/recipes.json");
+    if (!res.ok) throw new Error("Failed to load recipes");
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+    if (recipeContainer) {
+      recipeContainer.innerHTML =
+        "<p style='color:red;'>Failed to load recipes.</p>";
+    }
+    return [];
+  }
+}
+
+// Create homepage recipe cards
+function createRecipeCards(recipes) {
+  if (!recipeGrid) return;
+  recipeGrid.innerHTML = "";
+
+  recipes.forEach((recipe) => {
+    const card = document.createElement("div");
+    card.className = "recipe-card home-style";
+    card.dataset.category = recipe.category;
+    card.innerHTML = `
+      <img src="${recipe.image}" alt="${recipe.title}" />
+      <div class="card-content">
+        <h3>${recipe.title}</h3>
+        <span class="tag">${recipe.category}</span>
+        <p class="meta">${recipe.description}</p>
+      </div>
+    `;
+    card.addEventListener("click", () => {
+      window.location.href = `recipe.html?id=${recipe.id}`;
+    });
+    recipeGrid.appendChild(card);
+  });
+}
+
+// Filter function
+function filterRecipes(category) {
+  const normalized = category.trim().toLowerCase();
+  if (normalized === "all recipes") {
+    createRecipeCards(allRecipes);
+  } else {
+    const filtered = allRecipes.filter(
+      (r) => r.category && r.category.toLowerCase() === normalized
+    );
+    createRecipeCards(filtered);
+  }
+
+  // Scroll to the recipe grid if it exists
+  if (recipeGrid)
+    document.getElementById("recipes").scrollIntoView({ behavior: "smooth" });
+}
+
+/// Display single recipe on recipe.html
+function displayRecipe(recipes) {
+  if (!recipeContainer) return;
+  const params = new URLSearchParams(window.location.search);
+  const recipeId = params.get("id");
+  const recipe = recipes.find((r) => r.id === recipeId);
+
+  if (!recipe) {
+    recipeContainer.innerHTML = "<p style='color:red;'>Recipe not found.</p>";
+    return;
+  }
+
+  const ingredientsHTML = Object.entries(recipe.ingredients)
+    .map(
+      ([section, items]) =>
+        `<h3 class="section-title">${section}</h3>
+         <div class="ingredients">
+           <ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>
+         </div>`
+    )
+    .join("");
+
+  const instructionsHTML = recipe.instructions
+    .map(
+      (step, i) => `<li><span class="step-number">${i + 1}</span>${step}</li>`
+    )
+    .join("");
+
+  recipeContainer.innerHTML = `
+    <a class="back-link" href="index.html">&larr; Back to Recipes</a>
+    <img class="recipe-image" src="${recipe.image}" alt="${recipe.title}" />
+    <h1 class="recipe-title">${recipe.title}</h1>
+    <p class="recipe-description">${recipe.description}</p>
+
+    <div class="cooking-info">
+      <div class="info-item">
+        <span class="label">COOKING TIME</span>
+        <span class="value">${recipe.cookingTime}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">DIFFICULTY</span>
+        <span class="value">${recipe.difficulty}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">SERVING</span>
+        <span class="value">${recipe.servings}</span>
+      </div>
+    </div>
+
+    ${ingredientsHTML}
+
+    <h3 class="section-title">Instructions</h3>
+    <div class="instructions">
+      <ol>${instructionsHTML}</ol>
+    </div>
+
+    ${recipe.tips ? `<div class="tips"><p>${recipe.tips}</p></div>` : ""}
+  `;
+}
+
+
+// Navbar buttons handling
+document.querySelectorAll(".nav-links button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.textContent.trim();
+
+    // If on homepage and recipeGrid exists, filter locally
+    if (recipeGrid) {
+      filterRecipes(category);
+    } else {
+      // If on another page (like recipe.html), redirect to homepage with category
+      const urlCategory = encodeURIComponent(category);
+      window.location.href = `index.html?category=${urlCategory}#recipes`;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const exploreBtn = document.querySelector(".hero-btn");
+  const recipesSection = document.getElementById("recipes");
+
+  if (exploreBtn && recipesSection) {
+    exploreBtn.addEventListener("click", (e) => {
+      e.preventDefault(); // prevent default jump
+      recipesSection.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+});
+
+// DOMContentLoaded
+document.addEventListener("DOMContentLoaded", async () => {
+  allRecipes = await fetchRecipes();
+
+  // Homepage recipe cards
+  if (recipeGrid) createRecipeCards(allRecipes);
+
+  // Recipe page
+  if (recipeContainer) displayRecipe(allRecipes);
+
+  // Check URL for category (used when coming from recipe page buttons)
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryFromUrl = urlParams.get("category");
+  if (categoryFromUrl && recipeGrid) {
+    filterRecipes(categoryFromUrl);
+    // Scroll to recipes section after a slight delay to ensure DOM is ready
+    setTimeout(() => {
+      document.getElementById("recipes").scrollIntoView({ behavior: "smooth" });
+    }, 50);
+  }
+
+  // Search functionality
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const filtered = allRecipes.filter((r) =>
+        r.title.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+      createRecipeCards(filtered);
+    });
+  }
+});
