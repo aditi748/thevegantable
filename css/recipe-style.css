@@ -1,0 +1,367 @@
+/* =====================
+   VARIABLES
+===================== */
+:root {
+  --sage: #8fa99b;
+  --olive: #6f7f6a;
+  --offwhite: #fbfbfa;
+  --text: #2e2e2e;
+  --muted: #6b6b6b;
+  --border: #e3e3e3;
+  --light-green: #edf4ec;
+  --dark-bg: #f3f4f2;
+  --tip-bg: #e7f1e7;
+  --number-bg: #cfe6cf;
+}
+
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background: var(--offwhite);
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 880px;
+  margin: auto;
+  padding: 2.8rem 1rem 4rem;
+}
+
+/* =====================
+   BACK LINK
+===================== */
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.back-link:hover {
+  color: var(--olive);
+}
+
+/* =====================
+   IMAGE
+===================== */
+.recipe-image {
+  max-height: 420px;
+  object-fit: cover;
+  margin-bottom: 2.6rem;
+}
+
+/* =====================
+   TITLE & DESCRIPTION
+===================== */
+.recipe-title {
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  margin-bottom: 1.2rem;
+}
+
+.recipe-description {
+  max-width: 680px;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 2.8rem;
+}
+
+/* =====================
+   COOKING INFO - MODERN STYLE
+===================== */
+.cooking-info {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  background: var(--light-green);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+.cooking-info .info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cooking-info .info-item .label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--olive);
+  margin-bottom: 0.25rem;
+}
+
+.cooking-info .info-item .value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* =====================
+   SECTION TITLES
+===================== */
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+/* =====================
+   INGREDIENTS
+===================== */
+.ingredients {
+  background: var(--dark-bg);
+  padding: 2rem;
+  border-radius: 18px;
+  margin-bottom: 3rem;
+}
+
+.ingredients ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.ingredients li {
+  padding-left: 1.3rem;
+  position: relative;
+}
+
+.ingredients li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--olive);
+  font-weight: 700;
+}
+
+/* =====================
+   INSTRUCTIONS
+===================== */
+.instructions {
+  background: var(--dark-bg);
+  padding: 2rem;
+  border-radius: 18px;
+  margin-bottom: 3rem;
+}
+
+.instructions ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.instructions li {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--number-bg);
+  color: var(--olive);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* =====================
+   TIPS
+===================== */
+.tips {
+  background: var(--tip-bg);
+  padding: 2rem;
+  border-radius: 18px;
+  border-left: 6px solid var(--olive);
+}
+
+.tips p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* =====================
+   RELATED RECIPES
+===================== */
+.related-recipes {
+  margin-top: 4.5rem;
+}
+
+.related-recipes h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.recipes-scroll {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 0.9rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.recipe-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* Homepage style card */
+.home-style {
+  min-width: 260px;
+  height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.home-style:hover {
+  transform: translateY(-5px);
+}
+
+.home-style img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay for homepage cards */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.15),
+    transparent
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+
+.card-overlay h3 {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* =====================
+   SCROLLBAR
+===================== */
+.themed-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+
+.themed-scroll::-webkit-scrollbar-track {
+  background: #eef3ee;
+  border-radius: 10px;
+}
+
+.themed-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6bbf8e, #4caf50);
+  border-radius: 10px;
+}
+
+.themed-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #4caf50 #eef3ee;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 760px;
+  }
+
+  .recipe-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe-image {
+    max-height: 300px;
+  }
+
+  .recipe-title {
+    font-size: 1.75rem;
+  }
+
+  .cooking-info {
+    flex-direction: column;
+    gap: 1.5rem; /* increased gap between each item */
+    text-align: center;
+  }
+
+  .cooking-info .info-item .label {
+    font-size: 0.7rem;
+  }
+
+  .cooking-info .info-item .value {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-title {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .ingredients,
+  .instructions,
+  .tips {
+    padding: 1.5rem;
+  }
+
+  .home-style {
+    min-width: 220px;
+    height: 150px;
+  }
+}
