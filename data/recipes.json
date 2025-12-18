@@ -1,0 +1,33 @@
+[
+  {
+    "id": "peanut-chocolate-balls",
+    "title": "Peanut-Chocolate Balls",
+    "image": "images/recipes/peanut-chocolate-balls.jpg",
+    "description": "Rich, chocolatey, and deeply satisfying — a homemade treat with simple ingredients.",
+    "category": "Desserts",
+    "cookingTime": "25 minutes",
+    "difficulty": "Easy",
+    "servings": "7 balls",
+    "ingredients": {
+      "Filling": [
+        "Roasted peanuts – ½ cup",
+        "Dates (soft, pitted) – 8",
+        "Oats – 2 tbsp",
+        "Cocoa powder – 1½ tbsp",
+        "Neutral oil (sunflower/refined) – 1 tbsp",
+        "Salt – a pinch",
+        "Vanilla essence – optional"
+      ],
+      "Chocolate Coating": ["Compound dark chocolate – ~100 g", "Oil – 1½ tsp"]
+    },
+    "instructions": [
+      "Dry roast peanuts until aromatic. Cool completely. Crush coarsely. Keep 1 to 2 tbsp aside.",
+      "Paste the dates. Add Oats, Cocoa powder, Oil, Salt & vanilla. Mix until a thick, sticky dough forms. Add the crushed peanuts.",
+      "Take 1 level tablespoon mixture per ball. Roll into smooth balls. Refrigerate for 15–20 minutes.",
+      "Heat water in a pan until hot (not boiling). Place chocolate in a heat‑safe bowl over the pan. Add oil and stir gently until smooth and glossy. Add reserved peanuts.",
+      "Dip chilled balls into melted chocolate. Place on a plate or parchment. Refrigerate 15 minutes until set."
+    ],
+    "nutrition": { "Calories": "140 kcal", "Protein": "3.5–4 g" },
+    "tips": "Store in refrigerator for 5–7 days."
+  }
+]
