@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Vegan Table</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="site-header nav-bar">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">The Vegan Table</a>
+        <nav class="nav-links">
+          <button>All Recipes</button>
+          <button>Main Course</button>
+          <button>Desserts</button>
+          <button>Snacks</button>
+          <button>Drinks</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section">
+      <img src="images/recipes/hero.jpg" alt="Vegan food" class="hero-image" />
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Delicious Vegan Recipes</h1>
+          <p>
+            Discover plant-based recipes that are simple, healthy, and
+            delicious.
+          </p>
+          <a href="#recipes" class="hero-btn">Explore Recipes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="search-section">
+      <div class="hero-search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a recipe..."
+        />
+      </div>
+    </section>
+
+    <!-- RECIPE GRID -->
+    <section class="container" id="recipes">
+      <div class="recipe-grid" id="recipeGrid">
+        <!-- Recipe cards loaded via JS -->
+      </div>
+    </section>
+
+    <script src="js/recipe.js"></script>
+  </body>
+</html>
