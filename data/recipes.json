@@ -64,7 +64,7 @@
       "Remove once lightly golden and crisp. Rest for 1–2 minutes.",
       "Season while warm and toss gently to coat."
     ],
-    "tips": "Slice thickness and microwave power vary. Always monitor closely in the final minutes."
+    "tips": "Slice thickness and microwave power vary. Always monitor closely otherwise might burn. Take the chips out while its hot otherwise will stick to the plate once hardens."
   },
 
   {
@@ -112,5 +112,49 @@
       "Slice and Assemble: Slice cooled cake into 2 layers. Spread ganache on bottom layer. Place second layer on top. Spread remaining ganache on top and sides. Smooth with spatula."
     ],
     "tips": "Measure ingredients carefully. Cool cake fully before frosting. Use same plant milk in ganache for best texture. Sift dry ingredients for a lighter cake."
+  },
+
+  {
+    "id": "velvet-veggie-pasta",
+    "title": "Velvet Veggie Pasta",
+    "image": "images/recipes/velvet-veggie-pasta.jpg",
+    "description": "A smooth, creamy Indian-style vegan pasta made with blended vegetables and tomato — light, comforting, and naturally rich without dairy.",
+    "category": "Main Course",
+    "cookingTime": "30 minutes",
+    "difficulty": "Easy",
+    "servings": "2",
+    "ingredients": {
+      "Pasta": [
+        "Pasta (penne, fusilli, or macaroni) – 150 g",
+        "Salt – for boiling water"
+      ],
+      "Vegetables for Sauce": [
+        "Carrot – 1 medium, chopped",
+        "Cauliflower florets – ½ cup",
+        "Tomato – 1 medium, chopped",
+        "Onion – ½ medium, chopped",
+        "Garlic – 2 cloves"
+      ],
+      "Seasoning & Finishing": [
+        "Olive oil / sunflower oil – 1½ tbsp",
+        "Water or vegetable stock – 1 cup",
+        "Lemon juice – ¾ tsp",
+        "Black pepper – ⅛ tsp",
+        "Salt – to taste",
+        "Red chilli flakes or Kashmiri red chilli powder – optional"
+      ],
+      "Garnish": ["Fresh coriander or parsley – as needed"]
+    },
+    "instructions": [
+      "Boil pasta in salted water until al dente. Drain and reserve 2–3 tablespoons of pasta water.",
+      "Heat oil in a pan. Sauté onion and garlic for 1–2 minutes until fragrant.",
+      "Add carrot, cauliflower, and tomato. Pour in water or vegetable stock and cook covered for 8–10 minutes until vegetables are very soft.",
+      "Transfer the cooked vegetables along with the cooking liquid to a blender. Blend until completely smooth and creamy.",
+      "Pour the blended sauce back into the pan. Add salt, black pepper, lemon juice, and chilli flakes if using. Heat gently.",
+      "Adjust sauce consistency using reserved pasta water if required.",
+      "Add cooked pasta to the sauce and toss gently until evenly coated.",
+      "Serve hot, garnished with fresh coriander or parsley. Optionally drizzle a little olive oil on top."
+    ],
+    "tips": "For extra creaminess, ensure vegetables are fully cooked before blending. Do not overheat after adding lemon juice to keep flavors balanced."
   }
 ]
