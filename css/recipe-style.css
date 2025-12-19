@@ -4,7 +4,7 @@
 :root {
   --sage: #8fa99b;
   --olive: #6f7f6a;
-  --offwhite: #fbfbfa;
+  --offwhite: #f4f7f4;
   --text: #2e2e2e;
   --muted: #6b6b6b;
   --border: #e3e3e3;
@@ -28,7 +28,7 @@ body {
     Arial, sans-serif;
   background: var(--offwhite);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.65;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
