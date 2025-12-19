@@ -4,7 +4,6 @@ const recipeContainer = document.getElementById("recipeContainer");
 
 let allRecipes = [];
 
-
 // Fetch recipes.json
 async function fetchRecipes() {
   try {
@@ -123,6 +122,32 @@ function displayRecipe(recipes) {
   `;
 }
 
+function displayRelatedRecipes(recipes) {
+  const params = new URLSearchParams(window.location.search);
+  const recipeId = params.get("id");
+  const relatedContainer = document.getElementById("relatedRecipes");
+  if (!relatedContainer) return;
+
+  // Exclude current recipe
+  const related = recipes.filter((r) => r.id !== recipeId);
+
+  relatedContainer.innerHTML = ""; // Clear any existing content
+
+  related.forEach((recipe) => {
+    const card = document.createElement("div");
+    card.className = "recipe-card home-style";
+    card.innerHTML = `
+      <img src="${recipe.image}" alt="${recipe.title}" />
+      <div class="card-overlay">
+        <h3>${recipe.title}</h3>
+      </div>
+    `;
+    card.addEventListener("click", () => {
+      window.location.href = `recipe.html?id=${recipe.id}`;
+    });
+    relatedContainer.appendChild(card);
+  });
+}
 
 // Navbar buttons handling
 document.querySelectorAll(".nav-links button").forEach((button) => {
@@ -160,7 +185,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (recipeGrid) createRecipeCards(allRecipes);
 
   // Recipe page
-  if (recipeContainer) displayRecipe(allRecipes);
+  if (recipeContainer) {
+    displayRecipe(allRecipes);
+    displayRelatedRecipes(allRecipes);
+  }
 
   // Check URL for category (used when coming from recipe page buttons)
   const urlParams = new URLSearchParams(window.location.search);
