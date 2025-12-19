@@ -21,6 +21,34 @@ async function fetchRecipes() {
   }
 }
 
+// Navbar buttons handling
+const navButtons = document.querySelectorAll(".nav-links button");
+
+function setActiveNavbarButton(category) {
+  navButtons.forEach((btn) => {
+    if (btn.textContent.trim().toLowerCase() === category?.toLowerCase()) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+}
+
+// Click event for navbar buttons
+navButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.textContent.trim();
+    setActiveNavbarButton(category);
+
+    if (recipeGrid) {
+      filterRecipes(category);
+    } else {
+      const urlCategory = encodeURIComponent(category);
+      window.location.href = `index.html?category=${urlCategory}#recipes`;
+    }
+  });
+});
+
 // Create recipe cards
 function createRecipeCards(recipes) {
   if (!recipeGrid) return;
@@ -81,10 +109,8 @@ function displayRecipe(recipes) {
     return;
   }
 
-  // Page title
   document.title = `${recipe.title} - The Vegan Table`;
 
-  // INGREDIENT GROUPS (dynamic)
   const ingredientsHTML = Object.entries(recipe.ingredients || {})
     .map(
       ([groupName, items]) => `
@@ -100,7 +126,6 @@ function displayRecipe(recipes) {
     )
     .join("");
 
-  // Instructions
   const instructionsHTML = recipe.instructions
     .map(
       (step, i) => `<li><span class="step-number">${i + 1}</span>${step}</li>`
@@ -141,7 +166,6 @@ function displayRecipe(recipes) {
   `;
 }
 
-
 // Display related recipes
 function displayRelatedRecipes(recipes) {
   const params = new URLSearchParams(window.location.search);
@@ -169,20 +193,6 @@ function displayRelatedRecipes(recipes) {
   });
 }
 
-// Navbar buttons handling
-document.querySelectorAll(".nav-links button").forEach((button) => {
-  button.addEventListener("click", () => {
-    const category = button.textContent.trim();
-
-    if (recipeGrid) {
-      filterRecipes(category);
-    } else {
-      const urlCategory = encodeURIComponent(category);
-      window.location.href = `index.html?category=${urlCategory}#recipes`;
-    }
-  });
-});
-
 // Explore Recipes button
 document.addEventListener("DOMContentLoaded", () => {
   const exploreBtn = document.querySelector(".hero-btn");
@@ -192,7 +202,6 @@ document.addEventListener("DOMContentLoaded", () => {
     exploreBtn.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // Reset to show all recipes
       if (recipeGrid) createRecipeCards(allRecipes);
 
       recipesSection.scrollIntoView({ behavior: "smooth" });
@@ -204,18 +213,18 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", async () => {
   allRecipes = await fetchRecipes();
 
-  // Homepage
   if (recipeGrid) createRecipeCards(allRecipes);
-
-  // Recipe page
   if (recipeContainer) {
     displayRecipe(allRecipes);
     displayRelatedRecipes(allRecipes);
   }
 
-  // Check URL category
+  // ✅ Set active navbar button based on URL category
   const urlParams = new URLSearchParams(window.location.search);
   const categoryFromUrl = urlParams.get("category");
+  setActiveNavbarButton(categoryFromUrl);
+
+  // Filter recipes if category present on homepage
   if (categoryFromUrl && recipeGrid) {
     filterRecipes(categoryFromUrl);
     setTimeout(() => {
@@ -223,7 +232,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }, 50);
   }
 
-  // Search
+  // Search functionality
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       const filtered = allRecipes.filter((r) =>
