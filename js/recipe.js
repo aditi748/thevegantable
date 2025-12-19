@@ -57,12 +57,11 @@ function filterRecipes(category) {
     createRecipeCards(filtered);
   }
 
-  // Scroll to the recipe grid if it exists
   if (recipeGrid)
     document.getElementById("recipes").scrollIntoView({ behavior: "smooth" });
 }
 
-/// Display single recipe on recipe.html
+// Display single recipe on recipe.html
 function displayRecipe(recipes) {
   if (!recipeContainer) return;
   const params = new URLSearchParams(window.location.search);
@@ -71,8 +70,16 @@ function displayRecipe(recipes) {
 
   if (!recipe) {
     recipeContainer.innerHTML = "<p style='color:red;'>Recipe not found.</p>";
+    document.title = "Recipe Not Found - The Vegan Table";
     return;
   }
+
+  // Dynamic page title
+  document.title = `${recipe.title} - The Vegan Table`;
+
+  // Set recipe page background same as homepage
+  document.body.style.backgroundColor = "#f4f7f4"; // Example homepage bg color
+  document.body.style.backgroundImage = "none"; // Remove any homepage image if present
 
   const ingredientsHTML = Object.entries(recipe.ingredients)
     .map(
@@ -128,10 +135,9 @@ function displayRelatedRecipes(recipes) {
   const relatedContainer = document.getElementById("relatedRecipes");
   if (!relatedContainer) return;
 
-  // Exclude current recipe
   const related = recipes.filter((r) => r.id !== recipeId);
 
-  relatedContainer.innerHTML = ""; // Clear any existing content
+  relatedContainer.innerHTML = "";
 
   related.forEach((recipe) => {
     const card = document.createElement("div");
@@ -153,55 +159,45 @@ function displayRelatedRecipes(recipes) {
 document.querySelectorAll(".nav-links button").forEach((button) => {
   button.addEventListener("click", () => {
     const category = button.textContent.trim();
-
-    // If on homepage and recipeGrid exists, filter locally
     if (recipeGrid) {
       filterRecipes(category);
     } else {
-      // If on another page (like recipe.html), redirect to homepage with category
       const urlCategory = encodeURIComponent(category);
       window.location.href = `index.html?category=${urlCategory}#recipes`;
     }
   });
 });
 
+// Explore button scroll
 document.addEventListener("DOMContentLoaded", () => {
   const exploreBtn = document.querySelector(".hero-btn");
   const recipesSection = document.getElementById("recipes");
 
   if (exploreBtn && recipesSection) {
     exploreBtn.addEventListener("click", (e) => {
-      e.preventDefault(); // prevent default jump
+      e.preventDefault();
       recipesSection.scrollIntoView({ behavior: "smooth" });
     });
   }
 });
 
-// DOMContentLoaded
+// DOMContentLoaded main
 document.addEventListener("DOMContentLoaded", async () => {
   allRecipes = await fetchRecipes();
 
-  // Homepage recipe cards
   if (recipeGrid) createRecipeCards(allRecipes);
+  if (recipeContainer) displayRecipe(allRecipes);
+  if (recipeContainer) displayRelatedRecipes(allRecipes);
 
-  // Recipe page
-  if (recipeContainer) {
-    displayRecipe(allRecipes);
-    displayRelatedRecipes(allRecipes);
-  }
-
-  // Check URL for category (used when coming from recipe page buttons)
   const urlParams = new URLSearchParams(window.location.search);
   const categoryFromUrl = urlParams.get("category");
   if (categoryFromUrl && recipeGrid) {
     filterRecipes(categoryFromUrl);
-    // Scroll to recipes section after a slight delay to ensure DOM is ready
     setTimeout(() => {
       document.getElementById("recipes").scrollIntoView({ behavior: "smooth" });
     }, 50);
   }
 
-  // Search functionality
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       const filtered = allRecipes.filter((r) =>
