@@ -138,6 +138,18 @@ a {
 }
 
 /* =====================
+   INGREDIENT GROUP (NEW)
+   Allows multiple ingredient boxes dynamically
+===================== */
+.ingredient-group {
+  margin-bottom: 3rem;
+}
+
+.ingredient-group:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================
    INGREDIENTS
 ===================== */
 .ingredients {
