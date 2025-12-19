@@ -21,10 +21,15 @@ async function fetchRecipes() {
   }
 }
 
-// Create homepage recipe cards
+// Create recipe cards
 function createRecipeCards(recipes) {
   if (!recipeGrid) return;
   recipeGrid.innerHTML = "";
+
+  if (recipes.length === 0) {
+    recipeGrid.innerHTML = "<p style='color:red;'>No recipes found.</p>";
+    return;
+  }
 
   recipes.forEach((recipe) => {
     const card = document.createElement("div");
@@ -45,7 +50,7 @@ function createRecipeCards(recipes) {
   });
 }
 
-// Filter function
+// Filter recipes by category
 function filterRecipes(category) {
   const normalized = category.trim().toLowerCase();
   if (normalized === "all recipes") {
@@ -57,6 +62,7 @@ function filterRecipes(category) {
     createRecipeCards(filtered);
   }
 
+  // Scroll to recipe grid
   if (recipeGrid)
     document.getElementById("recipes").scrollIntoView({ behavior: "smooth" });
 }
@@ -74,12 +80,8 @@ function displayRecipe(recipes) {
     return;
   }
 
-  // Dynamic page title
+  // Update page title
   document.title = `${recipe.title} - The Vegan Table`;
-
-  // Set recipe page background same as homepage
-  document.body.style.backgroundColor = "#f4f7f4"; // Example homepage bg color
-  document.body.style.backgroundImage = "none"; // Remove any homepage image if present
 
   const ingredientsHTML = Object.entries(recipe.ingredients)
     .map(
@@ -129,6 +131,7 @@ function displayRecipe(recipes) {
   `;
 }
 
+// Display related recipes
 function displayRelatedRecipes(recipes) {
   const params = new URLSearchParams(window.location.search);
   const recipeId = params.get("id");
@@ -159,6 +162,7 @@ function displayRelatedRecipes(recipes) {
 document.querySelectorAll(".nav-links button").forEach((button) => {
   button.addEventListener("click", () => {
     const category = button.textContent.trim();
+
     if (recipeGrid) {
       filterRecipes(category);
     } else {
@@ -168,7 +172,7 @@ document.querySelectorAll(".nav-links button").forEach((button) => {
   });
 });
 
-// Explore button scroll
+// Explore Recipes button
 document.addEventListener("DOMContentLoaded", () => {
   const exploreBtn = document.querySelector(".hero-btn");
   const recipesSection = document.getElementById("recipes");
@@ -176,6 +180,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (exploreBtn && recipesSection) {
     exploreBtn.addEventListener("click", (e) => {
       e.preventDefault();
+
+      // Reset to show all recipes
+      if (recipeGrid) createRecipeCards(allRecipes);
+
       recipesSection.scrollIntoView({ behavior: "smooth" });
     });
   }
@@ -185,10 +193,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", async () => {
   allRecipes = await fetchRecipes();
 
+  // Homepage
   if (recipeGrid) createRecipeCards(allRecipes);
-  if (recipeContainer) displayRecipe(allRecipes);
-  if (recipeContainer) displayRelatedRecipes(allRecipes);
 
+  // Recipe page
+  if (recipeContainer) {
+    displayRecipe(allRecipes);
+    displayRelatedRecipes(allRecipes);
+  }
+
+  // Check URL category
   const urlParams = new URLSearchParams(window.location.search);
   const categoryFromUrl = urlParams.get("category");
   if (categoryFromUrl && recipeGrid) {
@@ -198,6 +212,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }, 50);
   }
 
+  // Search
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       const filtered = allRecipes.filter((r) =>
