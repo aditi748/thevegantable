@@ -3,7 +3,7 @@
     "id": "peanut-chocolate-balls",
     "title": "Peanut-Chocolate Balls",
     "image": "images/recipes/peanut-chocolate-balls.jpg",
-    "description": "Rich, chocolatey, and deeply satisfying — a homemade treat with simple ingredients.",
+    "description": "Rich, chocolatey, and deeply satisfying — a homemade vegan treat made with simple pantry ingredients.",
     "category": "Desserts",
     "cookingTime": "25 minutes",
     "difficulty": "Easy",
@@ -18,32 +18,34 @@
         "Salt – a pinch",
         "Vanilla essence – optional"
       ],
-      "Chocolate Coating": ["Compound dark chocolate – ~100 g", "Oil – 1½ tsp"]
+      "Chocolate Coating": [
+        "Compound dark chocolate – 100 g",
+        "Neutral oil – 1½ tsp"
+      ]
     },
     "instructions": [
-      "Dry roast peanuts until aromatic. Cool completely. Crush coarsely. Keep 1 to 2 tbsp aside.",
-      "Paste the dates. Add Oats, Cocoa powder, Oil, Salt & vanilla. Mix until a thick, sticky dough forms. Add the crushed peanuts.",
-      "Take 1 level tablespoon mixture per ball. Roll into smooth balls. Refrigerate for 15–20 minutes.",
-      "Heat water in a pan until hot (not boiling). Place chocolate in a heat‑safe bowl over the pan. Add oil and stir gently until smooth and glossy. Add reserved peanuts.",
-      "Dip chilled balls into melted chocolate. Place on a plate or parchment. Refrigerate 15 minutes until set."
+      "Dry roast peanuts until aromatic. Cool completely and crush coarsely. Keep 1–2 tablespoons aside.",
+      "Blend dates into a paste. Add oats, cocoa powder, oil, salt, and vanilla. Mix until thick and sticky. Fold in crushed peanuts.",
+      "Take 1 level tablespoon of mixture and roll into smooth balls. Refrigerate for 15–20 minutes.",
+      "Melt chocolate using a double boiler. Add oil and stir until smooth and glossy. Mix in reserved peanuts.",
+      "Dip chilled balls into melted chocolate. Place on parchment and refrigerate for 15 minutes until set."
     ],
-    "nutrition": { "Calories": "140 kcal", "Protein": "3.5–4 g" },
-    "tips": "Store in refrigerator for 5–7 days."
+    "tips": "Store refrigerated in an airtight container for up to 5–7 days."
   },
 
   {
     "id": "microwave-potato-chips",
     "title": "Microwave Potato Chips",
     "image": "images/recipes/microwave-potato-chips.jpg",
-    "description": "Crispy, thin potato chips made effortlessly in the microwave with minimal oil.",
+    "description": "Crispy, thin potato chips made effortlessly in the microwave using minimal oil.",
     "category": "Snacks",
     "cookingTime": "8–10 minutes",
     "difficulty": "Easy",
     "servings": "2",
     "ingredients": {
-      "Main": [
+      "Main Ingredients": [
         "Potatoes (medium-sized) – 2",
-        "Neutral oil – 1 to 1½ teaspoons"
+        "Neutral oil – 1 to 1½ tsp"
       ],
       "Seasoning": [
         "Chaat masala – to taste",
@@ -52,215 +54,63 @@
       ]
     },
     "instructions": [
-      "Scrub the potatoes thoroughly under running water to remove all dirt. Do not peel them; the skin adds texture and flavor.",
-      "Using a mandolin slicer, cut the potatoes into very thin, even slices to ensure uniform cooking.",
-      "Place the slices in a bowl of water and rinse 2–3 times until the water runs mostly clear. This removes excess starch and helps achieve crisp chips.",
-      "Drain the slices well and pat them completely dry using a clean kitchen towel. Any moisture left behind can cause uneven cooking or burning.",
-      "Transfer the dry slices to a bowl, add the neutral oil, and gently toss so each slice is lightly coated.",
-      "Lightly grease a microwave-safe plate or line it with parchment paper.",
-      "Arrange the potato slices in a single, non-overlapping layer. Avoid stacking to ensure even cooking.",
-      "Microwave on high power for 5–8 minutes, checking every 2 minutes. Rotate the plate and flip or rearrange slices as needed. Stop cooking as soon as the chips turn lightly golden and crisp — overcooking can cause burning, especially in the center.",
-      "Remove from the microwave and let the chips rest for 1–2 minutes. They will continue to crisp as they cool.",
-      "While still warm, transfer the chips to a container, add the seasoning, close the lid, and shake gently until evenly coated."
+      "Wash potatoes thoroughly. Do not peel.",
+      "Slice very thinly using a mandolin.",
+      "Rinse slices in water 2–3 times to remove excess starch.",
+      "Drain and pat completely dry using a kitchen towel.",
+      "Toss slices with oil until lightly coated.",
+      "Arrange slices in a single layer on a greased microwave-safe plate.",
+      "Microwave on high for 5–8 minutes, checking and rearranging every 2 minutes.",
+      "Remove once lightly golden and crisp. Rest for 1–2 minutes.",
+      "Season while warm and toss gently to coat."
     ],
-    "tips": "Microwave power and slice thickness vary. Always cook in short intervals and monitor closely in the final minutes for a clean, evenly cooked result."
+    "tips": "Slice thickness and microwave power vary. Always monitor closely in the final minutes."
   },
+
   {
-    "id": "peanut-chocolate-balls",
-    "title": "Peanut-Chocolate Balls",
-    "image": "images/recipes/peanut-chocolate-balls.jpg",
-    "description": "Rich, chocolatey, and deeply satisfying — a homemade treat with simple ingredients.",
+    "id": "chocolate-cake",
+    "title": "Chocolate Cake",
+    "image": "images/recipes/chocolate-cake.jpg",
+    "description": "A soft, moist, and deeply chocolatey vegan cake made without eggs or dairy — perfect for celebrations or everyday indulgence.",
     "category": "Desserts",
-    "cookingTime": "25 minutes",
-    "difficulty": "Easy",
-    "servings": "7 balls",
+    "cookingTime": "45 minutes",
+    "difficulty": "Medium",
+    "servings": "1 seven-inch cake",
     "ingredients": {
-      "Filling": [
-        "Roasted peanuts – ½ cup",
-        "Dates (soft, pitted) – 8",
-        "Oats – 2 tbsp",
-        "Cocoa powder – 1½ tbsp",
-        "Neutral oil (sunflower/refined) – 1 tbsp",
-        "Salt – a pinch",
-        "Vanilla essence – optional"
+      "Dry Ingredients": [
+        "¾ cup whole wheat flour",
+        "3 tablespoons cocoa powder",
+        "½ cup powdered white sugar",
+        "¾ teaspoon baking powder",
+        "¼ teaspoon baking soda",
+        "1 pinch salt",
+        "¼ teaspoon coffee powder"
       ],
-      "Chocolate Coating": ["Compound dark chocolate – ~100 g", "Oil – 1½ tsp"]
-    },
-    "instructions": [
-      "Dry roast peanuts until aromatic. Cool completely. Crush coarsely. Keep 1 to 2 tbsp aside.",
-      "Paste the dates. Add Oats, Cocoa powder, Oil, Salt & vanilla. Mix until a thick, sticky dough forms. Add the crushed peanuts.",
-      "Take 1 level tablespoon mixture per ball. Roll into smooth balls. Refrigerate for 15–20 minutes.",
-      "Heat water in a pan until hot (not boiling). Place chocolate in a heat‑safe bowl over the pan. Add oil and stir gently until smooth and glossy. Add reserved peanuts.",
-      "Dip chilled balls into melted chocolate. Place on a plate or parchment. Refrigerate 15 minutes until set."
-    ],
-    "nutrition": { "Calories": "140 kcal", "Protein": "3.5–4 g" },
-    "tips": "Store in refrigerator for 5–7 days."
-  },
-
-  {
-    "id": "microwave-potato-chips",
-    "title": "Microwave Potato Chips",
-    "image": "images/recipes/microwave-potato-chips.jpg",
-    "description": "Crispy, thin potato chips made effortlessly in the microwave with minimal oil.",
-    "category": "Snacks",
-    "cookingTime": "8–10 minutes",
-    "difficulty": "Easy",
-    "servings": "2",
-    "ingredients": {
-      "Main": [
-        "Potatoes (medium-sized) – 2",
-        "Neutral oil – 1 to 1½ teaspoons"
+      "Wet Ingredients": [
+        "3 tablespoons sunflower oil",
+        "¼ cup peanut curd",
+        "¼ cup plant milk (almond, oat, soy — room temperature)",
+        "1 teaspoon vinegar"
       ],
-      "Seasoning": [
-        "Chaat masala – to taste",
-        "Black salt – to taste",
-        "Kashmiri red chilli powder – to taste"
+      "Optional for Extra Richness": ["25 g dark chocolate, melted"],
+      "Thick Vegan Chocolate Ganache": [
+        "100 g dark chocolate, finely chopped",
+        "2–3 tablespoons hot plant milk",
+        "1 teaspoon sunflower oil"
       ]
     },
     "instructions": [
-      "Scrub the potatoes thoroughly under running water to remove all dirt. Do not peel them; the skin adds texture and flavor.",
-      "Using a mandolin slicer, cut the potatoes into very thin, even slices to ensure uniform cooking.",
-      "Place the slices in a bowl of water and rinse 2–3 times until the water runs mostly clear. This removes excess starch and helps achieve crisp chips.",
-      "Drain the slices well and pat them completely dry using a clean kitchen towel. Any moisture left behind can cause uneven cooking or burning.",
-      "Transfer the dry slices to a bowl, add the neutral oil, and gently toss so each slice is lightly coated.",
-      "Lightly grease a microwave-safe plate or line it with parchment paper.",
-      "Arrange the potato slices in a single, non-overlapping layer. Avoid stacking to ensure even cooking.",
-      "Microwave on high power for 5–8 minutes, checking every 2 minutes. Rotate the plate and flip or rearrange slices as needed. Stop cooking as soon as the chips turn lightly golden and crisp — overcooking can cause burning, especially in the center.",
-      "Remove from the microwave and let the chips rest for 1–2 minutes. They will continue to crisp as they cool.",
-      "While still warm, transfer the chips to a container, add the seasoning, close the lid, and shake gently until evenly coated."
+      "Prepare the pan: Grease a 7-inch round cake tin. Line the base with parchment paper or lightly dust with flour.",
+      "Preheat: Oven: 180°C (350°F) for 10 minutes.<br> Or, Kadhai: Heat on low flame with lid for 10 minutes.",
+      "Mix wet ingredients: In a bowl, whisk together peanut curd, sunflower oil, plant milk, and vinegar until smooth.",
+      "Sieve dry ingredients: Sieve together whole wheat flour, cocoa powder, powdered sugar, baking powder, baking soda, salt, and coffee powder.",
+      "Make the batter: Add dry ingredients to wet mix in two parts. Fold gently with a spatula until just combined. Do not overmix.",
+      "Add melted chocolate (optional): Fold in 25 g melted dark chocolate for extra richness.",
+      "Pour batter into prepared pan. Tap gently to release air bubbles. Bake at 180°C — Oven: 30–35 minutes or Kadai: 40–45 minutes on low flame. Toothpick should come out with moist crumbs (not wet batter).",
+      "Let cake cool 10 minutes in pan, then turn out onto a rack. Cool completely (at least 1 hour) before slicing.",
+      "Make Thick Ganache: Melt 100 g dark chocolate. Add 2–3 tablespoons hot plant milk gradually, mixing until glossy. Stir in 1 tsp sunflower oil. Rest 10–15 minutes until thick and spreadable.",
+      "Slice and Assemble: Slice cooled cake into 2 layers. Spread ganache on bottom layer. Place second layer on top. Spread remaining ganache on top and sides. Smooth with spatula."
     ],
-    "tips": "Microwave power and slice thickness vary. Always cook in short intervals and monitor closely in the final minutes for a clean, evenly cooked result."
-  },
-  {
-    "id": "peanut-chocolate-balls",
-    "title": "Peanut-Chocolate Balls",
-    "image": "images/recipes/peanut-chocolate-balls.jpg",
-    "description": "Rich, chocolatey, and deeply satisfying — a homemade treat with simple ingredients.",
-    "category": "Desserts",
-    "cookingTime": "25 minutes",
-    "difficulty": "Easy",
-    "servings": "7 balls",
-    "ingredients": {
-      "Filling": [
-        "Roasted peanuts – ½ cup",
-        "Dates (soft, pitted) – 8",
-        "Oats – 2 tbsp",
-        "Cocoa powder – 1½ tbsp",
-        "Neutral oil (sunflower/refined) – 1 tbsp",
-        "Salt – a pinch",
-        "Vanilla essence – optional"
-      ],
-      "Chocolate Coating": ["Compound dark chocolate – ~100 g", "Oil – 1½ tsp"]
-    },
-    "instructions": [
-      "Dry roast peanuts until aromatic. Cool completely. Crush coarsely. Keep 1 to 2 tbsp aside.",
-      "Paste the dates. Add Oats, Cocoa powder, Oil, Salt & vanilla. Mix until a thick, sticky dough forms. Add the crushed peanuts.",
-      "Take 1 level tablespoon mixture per ball. Roll into smooth balls. Refrigerate for 15–20 minutes.",
-      "Heat water in a pan until hot (not boiling). Place chocolate in a heat‑safe bowl over the pan. Add oil and stir gently until smooth and glossy. Add reserved peanuts.",
-      "Dip chilled balls into melted chocolate. Place on a plate or parchment. Refrigerate 15 minutes until set."
-    ],
-    "nutrition": { "Calories": "140 kcal", "Protein": "3.5–4 g" },
-    "tips": "Store in refrigerator for 5–7 days."
-  },
-
-  {
-    "id": "microwave-potato-chips",
-    "title": "Microwave Potato Chips",
-    "image": "images/recipes/microwave-potato-chips.jpg",
-    "description": "Crispy, thin potato chips made effortlessly in the microwave with minimal oil.",
-    "category": "Snacks",
-    "cookingTime": "8–10 minutes",
-    "difficulty": "Easy",
-    "servings": "2",
-    "ingredients": {
-      "Main": [
-        "Potatoes (medium-sized) – 2",
-        "Neutral oil – 1 to 1½ teaspoons"
-      ],
-      "Seasoning": [
-        "Chaat masala – to taste",
-        "Black salt – to taste",
-        "Kashmiri red chilli powder – to taste"
-      ]
-    },
-    "instructions": [
-      "Scrub the potatoes thoroughly under running water to remove all dirt. Do not peel them; the skin adds texture and flavor.",
-      "Using a mandolin slicer, cut the potatoes into very thin, even slices to ensure uniform cooking.",
-      "Place the slices in a bowl of water and rinse 2–3 times until the water runs mostly clear. This removes excess starch and helps achieve crisp chips.",
-      "Drain the slices well and pat them completely dry using a clean kitchen towel. Any moisture left behind can cause uneven cooking or burning.",
-      "Transfer the dry slices to a bowl, add the neutral oil, and gently toss so each slice is lightly coated.",
-      "Lightly grease a microwave-safe plate or line it with parchment paper.",
-      "Arrange the potato slices in a single, non-overlapping layer. Avoid stacking to ensure even cooking.",
-      "Microwave on high power for 5–8 minutes, checking every 2 minutes. Rotate the plate and flip or rearrange slices as needed. Stop cooking as soon as the chips turn lightly golden and crisp — overcooking can cause burning, especially in the center.",
-      "Remove from the microwave and let the chips rest for 1–2 minutes. They will continue to crisp as they cool.",
-      "While still warm, transfer the chips to a container, add the seasoning, close the lid, and shake gently until evenly coated."
-    ],
-    "tips": "Microwave power and slice thickness vary. Always cook in short intervals and monitor closely in the final minutes for a clean, evenly cooked result."
-  },
-  {
-    "id": "peanut-chocolate-balls",
-    "title": "Peanut-Chocolate Balls",
-    "image": "images/recipes/peanut-chocolate-balls.jpg",
-    "description": "Rich, chocolatey, and deeply satisfying — a homemade treat with simple ingredients.",
-    "category": "Desserts",
-    "cookingTime": "25 minutes",
-    "difficulty": "Easy",
-    "servings": "7 balls",
-    "ingredients": {
-      "Filling": [
-        "Roasted peanuts – ½ cup",
-        "Dates (soft, pitted) – 8",
-        "Oats – 2 tbsp",
-        "Cocoa powder – 1½ tbsp",
-        "Neutral oil (sunflower/refined) – 1 tbsp",
-        "Salt – a pinch",
-        "Vanilla essence – optional"
-      ],
-      "Chocolate Coating": ["Compound dark chocolate – ~100 g", "Oil – 1½ tsp"]
-    },
-    "instructions": [
-      "Dry roast peanuts until aromatic. Cool completely. Crush coarsely. Keep 1 to 2 tbsp aside.",
-      "Paste the dates. Add Oats, Cocoa powder, Oil, Salt & vanilla. Mix until a thick, sticky dough forms. Add the crushed peanuts.",
-      "Take 1 level tablespoon mixture per ball. Roll into smooth balls. Refrigerate for 15–20 minutes.",
-      "Heat water in a pan until hot (not boiling). Place chocolate in a heat‑safe bowl over the pan. Add oil and stir gently until smooth and glossy. Add reserved peanuts.",
-      "Dip chilled balls into melted chocolate. Place on a plate or parchment. Refrigerate 15 minutes until set."
-    ],
-    "nutrition": { "Calories": "140 kcal", "Protein": "3.5–4 g" },
-    "tips": "Store in refrigerator for 5–7 days."
-  },
-
-  {
-    "id": "microwave-potato-chips",
-    "title": "Microwave Potato Chips",
-    "image": "images/recipes/microwave-potato-chips.jpg",
-    "description": "Crispy, thin potato chips made effortlessly in the microwave with minimal oil.",
-    "category": "Snacks",
-    "cookingTime": "8–10 minutes",
-    "difficulty": "Easy",
-    "servings": "2",
-    "ingredients": {
-      "Main": [
-        "Potatoes (medium-sized) – 2",
-        "Neutral oil – 1 to 1½ teaspoons"
-      ],
-      "Seasoning": [
-        "Chaat masala – to taste",
-        "Black salt – to taste",
-        "Kashmiri red chilli powder – to taste"
-      ]
-    },
-    "instructions": [
-      "Scrub the potatoes thoroughly under running water to remove all dirt. Do not peel them; the skin adds texture and flavor.",
-      "Using a mandolin slicer, cut the potatoes into very thin, even slices to ensure uniform cooking.",
-      "Place the slices in a bowl of water and rinse 2–3 times until the water runs mostly clear. This removes excess starch and helps achieve crisp chips.",
-      "Drain the slices well and pat them completely dry using a clean kitchen towel. Any moisture left behind can cause uneven cooking or burning.",
-      "Transfer the dry slices to a bowl, add the neutral oil, and gently toss so each slice is lightly coated.",
-      "Lightly grease a microwave-safe plate or line it with parchment paper.",
-      "Arrange the potato slices in a single, non-overlapping layer. Avoid stacking to ensure even cooking.",
-      "Microwave on high power for 5–8 minutes, checking every 2 minutes. Rotate the plate and flip or rearrange slices as needed. Stop cooking as soon as the chips turn lightly golden and crisp — overcooking can cause burning, especially in the center.",
-      "Remove from the microwave and let the chips rest for 1–2 minutes. They will continue to crisp as they cool.",
-      "While still warm, transfer the chips to a container, add the seasoning, close the lid, and shake gently until evenly coated."
-    ],
-    "tips": "Microwave power and slice thickness vary. Always cook in short intervals and monitor closely in the final minutes for a clean, evenly cooked result."
+    "tips": "Measure ingredients carefully. Cool cake fully before frosting. Use same plant milk in ganache for best texture. Sift dry ingredients for a lighter cake."
   }
 ]
