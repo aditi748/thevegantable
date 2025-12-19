@@ -71,13 +71,27 @@ a {
 .nav-links button {
   background: none;
   border: none;
-  font: inherit;
-  color: var(--muted);
-  cursor: pointer;
   font-size: 0.95rem;
-  font-weight: 500;
-  transition: color 0.25s ease;
-  white-space: nowrap;
+  color: var(--text);
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+.nav-links button.active {
+  color: var(--olive);
+}
+
+.nav-links button.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--olive); /* vegan-themed underline */
+  border-radius: 2px;
 }
 
 .nav-links button:hover {
