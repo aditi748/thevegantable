@@ -202,8 +202,13 @@ document.addEventListener("DOMContentLoaded", () => {
     exploreBtn.addEventListener("click", (e) => {
       e.preventDefault();
 
+      // Show all recipes
       if (recipeGrid) createRecipeCards(allRecipes);
 
+      // ✅ Remove active class from all navbar buttons
+      navButtons.forEach((btn) => btn.classList.remove("active"));
+
+      // Scroll to recipes section
       recipesSection.scrollIntoView({ behavior: "smooth" });
     });
   }
