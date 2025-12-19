@@ -70,6 +70,7 @@ function filterRecipes(category) {
 // Display single recipe on recipe.html
 function displayRecipe(recipes) {
   if (!recipeContainer) return;
+
   const params = new URLSearchParams(window.location.search);
   const recipeId = params.get("id");
   const recipe = recipes.find((r) => r.id === recipeId);
@@ -80,19 +81,26 @@ function displayRecipe(recipes) {
     return;
   }
 
-  // Update page title
+  // Page title
   document.title = `${recipe.title} - The Vegan Table`;
 
-  const ingredientsHTML = Object.entries(recipe.ingredients)
+  // INGREDIENT GROUPS (dynamic)
+  const ingredientsHTML = Object.entries(recipe.ingredients || {})
     .map(
-      ([section, items]) =>
-        `<h3 class="section-title">${section}</h3>
-         <div class="ingredients">
-           <ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>
-         </div>`
+      ([groupName, items]) => `
+      <div class="ingredient-group">
+        <h3 class="section-title">${groupName}</h3>
+        <div class="ingredients">
+          <ul>
+            ${items.map((item) => `<li>${item}</li>`).join("")}
+          </ul>
+        </div>
+      </div>
+    `
     )
     .join("");
 
+  // Instructions
   const instructionsHTML = recipe.instructions
     .map(
       (step, i) => `<li><span class="step-number">${i + 1}</span>${step}</li>`
@@ -101,7 +109,9 @@ function displayRecipe(recipes) {
 
   recipeContainer.innerHTML = `
     <a class="back-link" href="index.html">&larr; Back to Recipes</a>
+
     <img class="recipe-image" src="${recipe.image}" alt="${recipe.title}" />
+
     <h1 class="recipe-title">${recipe.title}</h1>
     <p class="recipe-description">${recipe.description}</p>
 
@@ -115,7 +125,7 @@ function displayRecipe(recipes) {
         <span class="value">${recipe.difficulty}</span>
       </div>
       <div class="info-item">
-        <span class="label">SERVING</span>
+        <span class="label">SERVINGS</span>
         <span class="value">${recipe.servings}</span>
       </div>
     </div>
@@ -130,6 +140,7 @@ function displayRecipe(recipes) {
     ${recipe.tips ? `<div class="tips"><p>${recipe.tips}</p></div>` : ""}
   `;
 }
+
 
 // Display related recipes
 function displayRelatedRecipes(recipes) {
