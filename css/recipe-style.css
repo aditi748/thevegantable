@@ -182,11 +182,13 @@ a {
 /* =====================
    INSTRUCTIONS
 ===================== */
+.ingredients,
 .instructions {
-  background: var(--dark-bg);
+  background: #f0f3f0; /* soft, muted gray-beige, subtle contrast */
   padding: 2rem;
   border-radius: 18px;
   margin-bottom: 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* gentle lift */
 }
 
 .instructions ol {
